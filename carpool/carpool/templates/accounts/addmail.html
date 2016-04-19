@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+	Hi {{ request.user.first_name }} Please provide your email_id to complete your verification process:
+	<form action="{% url 'accounts:addmail' %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="email" placeholder="Email Id" id="mailholder" />
+	<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
